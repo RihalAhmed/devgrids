@@ -1,0 +1,15 @@
+version: '3'
+services:
+  django:
+    build:
+      context: .
+      dockerfile: dockerfile  
+    container_name: devgrids 
+    volumes:
+      - ./project:/app  
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DJANGO_SETTINGS_MODULE=project.settings
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
