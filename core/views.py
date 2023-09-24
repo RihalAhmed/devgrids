@@ -8,6 +8,10 @@ def index(request):
 def themes(request):
     return render(request, 'themes.html')
 
+# blogs
+
+def blogs(request):
+    return render(request, 'blog.html')
 def blogdetails1(request):
     return render(request, 'blog-details1.html')
 def blogdetails2(request):
@@ -19,3 +23,9 @@ def blogdetails4(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+def terms(request):
+    return render(request, 'terms.html')
+
+def policy(request):
+    return render(request, 'policy.html')
