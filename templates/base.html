@@ -29,6 +29,43 @@
 </head>
 
 <body>
+
+
+   <!-- Messenger Chat Plugin Code -->
+   <div id="fb-root"></div>
+
+   <!-- Your Chat Plugin code -->
+   <div id="fb-customer-chat" class="fb-customerchat">
+   </div>
+
+   <script>
+     var chatbox = document.getElementById('fb-customer-chat');
+     chatbox.setAttribute("page_id", "118035772449049");
+     chatbox.setAttribute("attribution", "biz_inbox");
+   </script>
+
+   <!-- Your SDK code -->
+   <script>
+     window.fbAsyncInit = function() {
+       FB.init({
+         xfbml            : true,
+         version          : 'v18.0'
+       });
+     };
+
+     (function(d, s, id) {
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) return;
+       js = d.createElement(s); js.id = id;
+       js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+   </script>
+
+
+
+
+
    <!--[if lte IE 9]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
       <![endif]-->
@@ -49,7 +86,7 @@
                            </li>
                            <li class="has-dropdown "><a href="/themes">Themes</a> 
                               <ul class="submenu text-start">
-                                 <li><a href="portfolio-2.html">Vue js | React</a></li>
+                                 <li><a href="/themes" data-filter=".cat2">Vue js | React</a></li>
                                  <li><a href="portfolio-2.html">Wordpress</a></li>
                                  <li><a href="portfolio-2.html">Themeforest</a></li>
                                  <li><a href="portfolio-2.html">Shopify</a></li>
@@ -57,9 +94,9 @@
                                  <li><a href="portfolio-2.html">WooCommerce</a></li>
                               </ul>
                            </li>
-                           <li><a href="#services">Service</a>
+                           <li><a href="/#services">Service</a>
                            </li>
-                           <li><a href="#testimonial">Testimonial</a>
+                           <li><a href="/#testimonial">Testimonial</a>
                            </li>
                            <li><a href="/contact">Contact</a></li>
                         </ul>
@@ -101,7 +138,53 @@
       </div>
    </div>
    <!-- header-md-menu-end -->
+   <div class="tp-offcanvas-area">
+      <div class="tpoffcanvas">
+         <div class="tpoffcanvas__logo">
+            <a href="index.html">
+               <img src="{% static 'assets/img/logo/logo-main-black.png' %}" alt="">
+            </a>
+         </div>
+         <div class="tpoffcanvas__close-btn">
+            <a class="close-btn" href="javascript:void(0)"><i class="fal fa-times-hexagon"></i></a>
+         </div>
+         <div class="tpoffcanvas__content d-none d-sm-block">
+            <p>We deploy world-class Creative <br> on demand.</p>
+         </div>
+         <div class="mobile-menu">
 
+         </div>
+         <div class="tpoffcanvas__contact">
+            <span>Contact us</span>
+            <ul>
+               <li><i class="fas fa-star"></i> <a href="https://goo.gl/maps/abHegV4AoiJA6Syd8" target="_blank">Melbone
+                     st, Australia, Ny 12099</a></li>
+               <li><i class="fas fa-star"></i> <a href="tel:+8801896144064">+880-18961-44064</a></li>
+               <li><i class="fas fa-star"></i> <a href="mailto:devgridsofficial@gmail.com">Devgridsofficial@gmail.com</a></li>
+            </ul>
+         </div>
+         <div class="tpoffcanvas__input d-none d-sm-block">
+            <p>Get UPdate</p>
+            <form class="p-relative" action="#">
+               <input type="text" placeholder="Enter mail">
+               <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+         </div>
+         <div class="tpoffcanvas__instagram d-none d-sm-block">
+            <p>Check Instagram POst</p>
+           <div class="tp-insta">
+            <div class="row">
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'assets/img/offcanvas/insta-1.jpg' %}" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'assets/img/offcanvas/insta-2.jpg' %}" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'assets/img/offcanvas/insta-4.jpg' %}" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'assets/img/offcanvas/insta-4.jpg' %}" alt=""></a></div>
+            </div>
+           </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="body-overlay"></div>
 
 {% block content %}
 {% endblock %}
@@ -141,10 +224,10 @@
                    <div class="tp-footer-widget__list">
                       <ul>
                          <li><a href="/contact">Contact us</a></li>
-                         <li><a href="#">How it Works</a></li>
-                         <li><a href="#">Create</a></li>
+                         <li><a href="#">How We Work</a></li>
+                         <li><a href="#">Create Meeting</a></li>
                          <li><a href="#">Explore</a></li>
-                         <li><a href="#">Terms & Services</a></li>
+                         <li><a href="/terms">Terms & Services</a></li>
                       </ul>
                    </div>
                 </div>
@@ -156,11 +239,11 @@
                    </div>
                    <div class="tp-footer-widget__list">
                       <ul>
-                         <li><a href="#">Help Center</a></li>
-                         <li><a href="#">Partners</a></li>
-                         <li><a href="#">Suggestions</a></li>
-                         <li><a href="blog.html">Blog</a></li>
-                         <li><a href="#">Newsletters</a></li>
+                         <li><a href="https://discord.gg/ssvswkdNhx" target="_blank">Help Center</a></li>
+                         <li><a href="/#partners">Partners</a></li>
+                         <li><a href="https://docs.google.com/forms/d/1ZzOKn62bwNawzWNV_c8rfJvOvuHSeMMYIJHZVLS5MKg/prefill" target="_blank">Suggestions</a></li>
+                         <li><a href="/blogs">Blog</a></li>
+                         <li><a href="/#newsletter">Newsletters</a></li>
                       </ul>
                    </div>
                 </div>
@@ -183,7 +266,7 @@
                          <div class="tp-footer-widget__tp-insta-img mb-15">
                             <img class="w-100" src="{% static 'assets/img/footer/footer-2.jpg' %}" alt="">
                             <div class="tp-footer-widget__tp-insta-img-icon">
-                               <a href="#"><i class="fab fa-instagram"></i></a>
+                               <a href="{% static 'assets/img/footer/footer-2.jpg' %}" target="_blank"><i class="fab fa-instagram"></i></a>
                             </div>
                          </div>
                       </div>
@@ -236,9 +319,9 @@
                    </div>
                    <div class="col-xl-6 col-lg-6 col-12">
                       <div class="tp-copyright-right text-md-center text-start text-lg-end">
-                         <a href="#">Terms and conditions</a>
-                         <a href="#"> Privacy policy</a>
-                         <a href="mailto:rihalahmed10@gmail.com" target="_blank">Email Us</a>
+                         <a href="/terms">Terms and conditions</a>
+                         <a href="/policy"> Privacy policy</a>
+                         <a href="mailto:devgridsofficial@gmail.com" target="_blank">Email Us</a>
                       </div>
                    </div>
                 </div>
