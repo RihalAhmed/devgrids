@@ -21,6 +21,9 @@ def blogdetails3(request):
 def blogdetails4(request):
     return render(request, 'blog-details4.html')
 
+def works(request):
+    return render(request, 'works.html')
+
 def contact(request):
     return render(request, 'contact.html')
 
